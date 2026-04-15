@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Scott Shellis Films</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Avenir", "Avenir Next", sans-serif;
+      background: #ffffff;
+      color: #666;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    /* NAV */
+    .nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 22px 0;
+      z-index: 100;
+      transition: all 0.35s ease;
+    }
+
+    .nav.scrolled {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo,
+    .nav-links a {
+      font-family: 'EB Garamond', serif;
+      letter-spacing: 0.18em;
+    }
+
+    .logo {
+      color: #bfbfbf;
+      font-size: 14px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a {
+      margin-left: 26px;
+      text-decoration: none;
+      color: #bfbfbf;
+      font-size: 12px;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav.scrolled .logo,
+    .nav.scrolled .nav-links a {
+      color: #333;
+    }
+
+    .nav-links a.active {
+      opacity: 0.6;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0%;
+      height: 1px;
+      background: currentColor;
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      padding: 140px 0 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url('molly.webp') center/cover no-repeat;
+      filter: brightness(1.12) contrast(1.04);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.10);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: clamp(28px, 5vw, 52px);
+      letter-spacing: 0.16em;
+      color: #ffffff;
+      margin-bottom: 18px;
+    }
+
+    .hero h2 {
+      font-size: clamp(16px, 2.2vw, 20px);
+      color: #ffffff;
+      margin-bottom: 36px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 30px;
+      border: 1px solid #ffffff;
+      text-decoration: none;
+      color: #ffffff;
+      letter-spacing: 0.1em;
+      font-size: 12px;
+      transition: all 0.25s ease;
+    }
+
+    .btn:hover {
+      background: #ffffff;
+      color: #000;
+    }
+
+    .fade {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease;
+    }
+
+    .fade.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .intro {
+      padding: 110px 0 90px;
+      text-align: center;
+    }
+
+    .intro-highlight {
+      font-size: clamp(20px, 2.4vw, 26px);
+      max-width: 620px;
+      margin: 0 auto 42px;
+      color: #333;
+    }
+
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: #ddd;
+      margin: 0 auto 34px;
+    }
+
+    .intro p {
+      max-width: 600px;
+      margin: 0 auto 22px;
+    }
+
+    .feature {
+      padding: 50px 0 90px;
+      text-align: center;
+    }
+
+    .feature img {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .cta {
+      padding: 90px 0 130px;
+      text-align: center;
+    }
+
+    .cta h2 { margin-bottom: 14px; }
+    .cta p { margin-bottom: 36px; }
+
+    .cta .btn {
+      border: 1px solid #666;
+      color: #666;
+    }
+
+    .cta .btn:hover {
+      background: #666;
+      color: #fff;
+    }
+
+    /* ✅ SAFE MOBILE NAV FIX */
+    @media (max-width: 768px) {
+      .nav-inner {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+      }
+
+      .nav-links a {
+        margin-left: 0;
+        font-size: 11px;
+      }
+
+      .hero { padding: 120px 0 80px; }
+      .intro { padding: 80px 0; }
+      .cta { padding: 70px 0 110px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="nav fade">
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">SCOTT SHELLIS FILMS</a>
+    <div class="nav-links">
+      <a href="index.html" class="active">HOME</a>
+      <a href="films.html">FILMS</a>
+      <a href="contact.html">CONTACT</a>
+    </div>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="hero-content fade">
+    <h1>SCOTT SHELLIS FILMS</h1>
+    <h2>Cinematic Wedding Films<br>That Feel Like You</h2>
+    <a href="films.html" class="btn">WATCH FILMS</a>
+  </div>
+</section>
+
+<section class="intro container fade">
+  <p class="intro-highlight">
+    Honest, cinematic wedding films that reflect your day as it really felt.
+  </p>
+
+  <div class="divider"></div>
+
+  <p>Wedding videography across the UK, capturing real moments with a timeless, cinematic style.</p>
+</section>
+
+<section class="feature container fade">
+  <img src="molly.webp" alt="Wedding film">
+</section>
+
+<section class="cta container fade">
+  <h2>Get in touch</h2>
+  <p>Enquire about your wedding film.</p>
+  <a href="contact.html" class="btn">CONTACT</a>
+</section>
+
+<script>
+const fades = document.querySelectorAll('.fade');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.2 });
+
+fades.forEach(el => observer.observe(el));
+
+const nav = document.querySelector('.nav');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+  }
+});
+</script>
+
+</body>
+</html>
