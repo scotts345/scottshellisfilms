@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Wedding Films | Cinematic Wedding Videographer UK</title>
+
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400&display=swap" rel="stylesheet">
+
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "Avenir", "Avenir Next", sans-serif;
+  background: #ffffff;
+  color: #666;
+}
+
+/* 🔥 MATCH CONTACT NAV EXACTLY */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 22px 0;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(6px);
+  z-index: 100;
+}
+
+.nav-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo,
+.nav-links a {
+  font-family: 'EB Garamond', serif;
+  letter-spacing: 0.18em;
+}
+
+.logo {
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+}
+
+.nav-links a {
+  margin-left: 26px;
+  text-decoration: none;
+  font-size: 12px;
+  color: #333;
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a[href="films.html"] {
+  color: #999;
+}
+
+/* CONTENT WRAPPER */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* TITLE */
+.title {
+  margin-top: 140px;
+  text-align: center;
+}
+
+.title h1 {
+  font-family: 'EB Garamond', serif;
+  font-size: clamp(28px, 5vw, 52px);
+  letter-spacing: 0.20em;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #2b2b2b;
+  margin-bottom: 14px;
+}
+
+.subtitle {
+  text-align: center;
+  font-family: 'EB Garamond', serif;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #888;
+  margin-top: 10px;
+  margin-bottom: 180px;
+}
+
+/* FILM */
+.film-single {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.thumb {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.thumb img {
+  width: 100%;
+  display: block;
+  transition: transform 0.6s ease, opacity 0.3s ease;
+}
+
+.thumb.loading img {
+  opacity: 0.85;
+}
+
+.thumb:hover img {
+  transform: scale(1.03);
+}
+
+/* PLAY BUTTON */
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-left: 22px solid rgba(255,255,255,0.85);
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  transition: opacity 0.2s ease;
+}
+
+.thumb.loading .play-button {
+  opacity: 0;
+}
+
+/* SPINNER */
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top: 2px solid white;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin 0.8s linear infinite;
+  opacity: 0;
+}
+
+.thumb.loading .spinner {
+  opacity: 1;
+}
+
+@keyframes spin {
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* CAPTION */
+.film-caption {
+  margin-top: 20px;
+  font-family: 'EB Garamond', serif;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  color: #2b2b2b;
+}
+
+/* 🔥 MOBILE — EXACT MATCH TO CONTACT */
+@media (max-width: 768px) {
+
+  .nav-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .nav-links a {
+    margin-left: 0;
+    font-size: 11px;
+  }
+
+  .container {
+    padding-bottom: 80px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">SCOTT SHELLIS FILMS</a>
+    <div class="nav-links">
+      <a href="index.html">HOME</a>
+      <a href="films.html">FILMS</a>
+      <a href="contact.html">CONTACT</a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="title">
+    <h1>WEDDING FILMS</h1>
+  </div>
+
+  <div class="subtitle">Selected Work</div>
+
+  <!-- FILM 1 -->
+  <div class="film-single">
+    <div class="thumb" onclick="playVideo(this, '1h7uEUeyP_c')">
+      <img src="molly.webp" alt="Cinematic wedding film Worcestershire">
+      <div class="play-button"></div>
+      <div class="spinner"></div>
+    </div>
+    <div class="film-caption">
+      MOLLY & RYAN // Curradine Barns ~ Worcester
+    </div>
+  </div>
+
+  <!-- FILM 2 -->
+  <div class="film-single">
+    <div class="thumb" onclick="playVideo(this, 'lzJbMWF9q8k')">
+      <img src="olivia_thumb.webp" alt="Cinematic wedding film Worcestershire">
+      <div class="play-button"></div>
+      <div class="spinner"></div>
+    </div>
+    <div class="film-caption">
+      OLIVIA & WILL // Whitbourne Hall ~ Worcester
+    </div>
+  </div>
+
+  <!-- FILM 3 -->
+  <div class="film-single">
+    <div class="thumb" onclick="playVideo(this, 'QjHCpOre0Pc')">
+      <img src="gemma_thumb.webp" alt="Cinematic wedding film Worcestershire">
+      <div class="play-button"></div>
+      <div class="spinner"></div>
+    </div>
+    <div class="film-caption">
+      GEMMA & JASON // Blakelands Country House ~ Stourbridge
+    </div>
+  </div>
+
+</div>
+
+<script>
+function playVideo(el, videoId) {
+  el.classList.add("loading");
+
+  setTimeout(() => {
+    window.location.href = "https://www.youtube.com/watch?v=" + videoId;
+  }, 400);
+}
+
+window.addEventListener("pageshow", function () {
+  document.querySelectorAll(".thumb").forEach(el => {
+    el.classList.remove("loading");
+  });
+});
+</script>
+
+</body>
+</html>
