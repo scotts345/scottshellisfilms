@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Wedding Films</title>
+<title>Wedding Films | Cinematic Wedding Videographer UK</title>
 
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400&display=swap" rel="stylesheet">
 
@@ -17,24 +17,21 @@ body {
   color: #666;
 }
 
-.container {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 28px;
-}
-
-/* NAV */
+/* 🔥 MATCH CONTACT NAV EXACTLY */
 .nav {
   position: fixed;
   top: 0;
   width: 100%;
   padding: 22px 0;
-  z-index: 100;
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(6px);
+  z-index: 100;
 }
 
 .nav-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 28px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -79,6 +76,13 @@ body {
   color: #999;
 }
 
+/* CONTENT WRAPPER */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
 /* TITLE */
 .title {
   margin-top: 140px;
@@ -103,7 +107,7 @@ body {
   text-transform: uppercase;
   color: #888;
   margin-top: 10px;
-  margin-bottom: 110px;
+  margin-bottom: 180px;
 }
 
 /* FILM */
@@ -149,7 +153,6 @@ body {
   transition: opacity 0.2s ease;
 }
 
-/* HIDE play button when loading */
 .thumb.loading .play-button {
   opacity: 0;
 }
@@ -186,8 +189,9 @@ body {
   color: #2b2b2b;
 }
 
-/* MOBILE */
+/* 🔥 MOBILE — EXACT MATCH TO CONTACT */
 @media (max-width: 768px) {
+
   .nav-inner {
     flex-direction: column;
     align-items: center;
@@ -215,7 +219,7 @@ body {
 <body>
 
 <div class="nav">
-  <div class="container nav-inner">
+  <div class="nav-inner">
     <a href="index.html" class="logo">SCOTT SHELLIS FILMS</a>
     <div class="nav-links">
       <a href="index.html">HOME</a>
@@ -236,7 +240,7 @@ body {
   <!-- FILM 1 -->
   <div class="film-single">
     <div class="thumb" onclick="playVideo(this, '1h7uEUeyP_c')">
-      <img src="molly.webp" alt="Molly & Ryan">
+      <img src="molly.webp" alt="Cinematic wedding film Worcestershire">
       <div class="play-button"></div>
       <div class="spinner"></div>
     </div>
@@ -248,7 +252,7 @@ body {
   <!-- FILM 2 -->
   <div class="film-single">
     <div class="thumb" onclick="playVideo(this, 'lzJbMWF9q8k')">
-      <img src="olivia_thumb.webp" alt="Olivia">
+      <img src="olivia_thumb.webp" alt="Cinematic wedding film Worcestershire">
       <div class="play-button"></div>
       <div class="spinner"></div>
     </div>
@@ -260,7 +264,7 @@ body {
   <!-- FILM 3 -->
   <div class="film-single">
     <div class="thumb" onclick="playVideo(this, 'QjHCpOre0Pc')">
-      <img src="gemma_thumb.webp" alt="Gemma">
+      <img src="gemma_thumb.webp" alt="Cinematic wedding film Worcestershire">
       <div class="play-button"></div>
       <div class="spinner"></div>
     </div>
@@ -280,7 +284,6 @@ function playVideo(el, videoId) {
   }, 400);
 }
 
-/* 🔥 RESET WHEN USER RETURNS */
 window.addEventListener("pageshow", function () {
   document.querySelectorAll(".thumb").forEach(el => {
     el.classList.remove("loading");
